@@ -1,0 +1,150 @@
+
+        nav {
+            background-color: #00703C;
+            padding: 10px;
+            margin: 0;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul {
+           padding: 0;
+           margin: 0;
+           list-style: none;
+           display: flex;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px;
+            background-color: #f0f0f0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .container {
+            margin-top: 30px;
+            text-align: center;
+            color: #2a7b75;
+        }
+        .container img {
+          max-width: 200px;
+          max-height: 200px; 
+          width: auto;
+          height: auto;
+          object-fit: contain; 
+      }
+      .features {
+          background: white;
+          padding: 50px 20px;
+          margin: 40px 0;
+          box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+      .feature-grid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(250px, 1fr));
+          gap: 30px;
+          max-width: 1000px;
+          margin: 0 auto;
+      }
+      .feature-card {
+          text-align: center;
+          padding: 30px 20px;
+          background: #f8f9fa;
+          border-radius: 8px;
+          border-left: 4px solid #28a745;
+      }
+      .feature-title1 {
+          font-weight: bold;
+          color: orange;
+      }
+      .feature-description1 {
+          color: orange;
+      }
+      .feature-title2 {
+          font-weight: bold;
+          color: blue;
+      }
+      .feature-description2 {
+          color: blue; 
+      } 
+      .feature-title3 {
+        font-weight: bold;
+        color: purple;
+    }
+    .feature-description3 {
+        color: purple; 
+    }
+    .feature-title4 {
+      font-weight: bold;
+      color: lightgreen;
+  }
+  .feature-description4 {
+      color: lightgreen; 
+  } 
+      .footer {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #008000;
+            text-align: center;
+       }
+        .logo {
+          color: #FF0000;
+       }
+       body {
+         margin: 0;
+         padding: 80px;
+         font-family: "Silkscreen", sans-serif;
+       }
+       .header {
+          width: 100%;
+          top: 0;
+          left: 0;
+          position: fixed;
+          padding: 20px;
+          background-color: #00703C;
+          display: flex;
+          justify-content: space-between;
+          z-index: 99;
+       }
+       #equipment {
+          margin-top: 120px; 
+          padding: 50px;
+          text-align: center;
+          background-color: #f0f0f0;
+       }
+       #home {
+          margin-top: 120px; 
+          padding: 50px;
+          text-align: center;
+          background-color: #f0f0f0;
+       }
+       #games {
+          margin-top: 120px; 
+          padding: 50px;
+          text-align: center;
+          background-color: #f0f0f0;
+      }
+      #basket {
+         margin-top: 120px; 
+         padding: 50px;
+         text-align: center;
+         background-color: #f0f0f0;
+      }
+
+      form label {
+        color: #000000;
+      }
+      #mainTitle {
+        color: #000000;
+      }
+        
+
