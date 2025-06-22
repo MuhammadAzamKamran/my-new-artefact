@@ -176,6 +176,55 @@ document.addEventListener('DOMContentLoaded', observeImages);
 
 </script>
 
+<div class="container">
+        <h2>Demonstration Video</h2>
+
+         <?php
+    $conn = new mysqli("localhost", "root", "", "images_blob");
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql2 = "SELECT title, video_path FROM video";
+    $result = $conn->query($sql2);
+
+    $result->data_seek(0);
+    $video = $result->fetch_assoc();
+    
+?>
+
+
+  <video controls width="640" height="480">
+  <source src="<?php echo htmlspecialchars($video['video_path']); ?>" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+</div>
+
+<script>
+const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const container = entry.target;
+            const videoSrc = container.getAttribute('data-src');
+            
+            const video = document.createElement('video');
+            video.controls = true;
+            video.src = videoSrc;
+            video.preload = 'metadata';
+            
+            container.innerHTML = '';
+            container.appendChild(video);
+            
+            videoObserver.unobserve(container);
+        }
+    });
+});
+
+document.querySelectorAll('.lazy-video').forEach(video => {
+    videoObserver.observe(video);
+});
+</script>
+
         <div class="footer">
         <p>&copy; 2025 Computer Equipment & Games. All rights reserved.</p>
         </div>

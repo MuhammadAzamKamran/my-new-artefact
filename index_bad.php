@@ -132,10 +132,34 @@ if (isset($_POST['add_to_basket'])) {
     } else {
         echo "<p>No images found.</p>";
     }
-
     $conn->close();
     ?>
 </div>
+
+<div class="container">
+        <h2>Demonstration Video</h2>
+
+         <?php
+    $conn = new mysqli("localhost", "root", "", "images_bad");
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql2 = "SELECT title, video_path FROM video";
+    $result = $conn->query($sql2);
+
+    $result->data_seek(0);
+    $video = $result->fetch_assoc();
+    
+?>
+
+
+  <video controls width="640" height="480">
+  <source src="<?php echo htmlspecialchars($video['video_path']); ?>" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+</div>
+
 
 <div class="footer">
     <p>&copy; 2025 Computer Equipment & Games. All rights reserved.</p>
