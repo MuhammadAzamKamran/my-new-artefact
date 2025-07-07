@@ -36,6 +36,7 @@ if (isset($_POST['add_to_basket'])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport">
     <title>Computer Equipment & Games</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
     rel="stylesheet">
@@ -77,7 +78,7 @@ if (isset($_POST['add_to_basket'])) {
         while ($row = $result->fetch_assoc()) {
             echo '<div class="col-lg-3 col-md-4 col-sm-6 mb-4">';
             echo '<div class="card h-100 shadow-sm">';
-            echo '<img src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%23f0f0f0\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3ELoading...%3C/text%3E%3C/svg%3E" data-src="' . htmlspecialchars($row['image_url']) . '" alt="' . htmlspecialchars($row['name']) . '" class="lazy-image" loading="lazy">';
+             echo '<img src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\'" data-src="' . htmlspecialchars($row['image_url']) . '" alt="' . htmlspecialchars($row['name']) . '" class="lazy-image" loading="lazy">';
             echo '<div class="card-body d-flex flex-column">';
             echo '<h5 class= "card-title">' . htmlspecialchars($row['name']) . '</h5>';
             echo '<p class="h5 text-success mb-2">£' . number_format($row['price'], 2) . '</p>';
@@ -118,7 +119,7 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
                     img.classList.add('loaded');
                 };
                 newImg.onerror = () => {
-                    img.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\'%3E%3Crect width=\'100%25\' height=\'100%25\' fill=\'%23f5f5f5\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' text-anchor=\'middle\' dy=\'.3em\' fill=\'%23999\'%3EImage not found%3C/text%3E%3C/svg%3E';
+                    img.src = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\'" data-src=%3EImage not found%3C/text%3E%3C/svg%3E';
                     img.classList.add('error');
                 };
                 newImg.src = src;
