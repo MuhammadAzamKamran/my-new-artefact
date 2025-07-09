@@ -1,4 +1,8 @@
 <?php
+if (extension_loaded('zlib') && !headers_sent()) {
+    ob_start('ob_gzhandler');
+}
+
 session_start();
 
 if (!isset($_SESSION['basket'])) {

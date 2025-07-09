@@ -1,4 +1,8 @@
 <?php
+if (extension_loaded('zlib') && !headers_sent()) {
+    ob_start('ob_gzhandler');
+}
+
 session_start();
 
 if (!isset($_SESSION['basket'])) {
@@ -78,7 +82,7 @@ if (isset($_POST['add_to_basket'])) {
         while ($row = $result->fetch_assoc()) {
             echo '<div class="col-lg-3 col-md-4 col-sm-6 mb-4">';
             echo '<div class="card h-100 shadow-sm">';
-             echo '<img src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\'" data-src="' . htmlspecialchars($row['image_url']) . '" alt="' . htmlspecialchars($row['name']) . '" class="lazy-image" loading="lazy">';
+            echo '<img src="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\'" data-src="' . htmlspecialchars($row['image_url']) . '" alt="' . htmlspecialchars($row['name']) . '" class="lazy-image" loading="lazy">';
             echo '<div class="card-body d-flex flex-column">';
             echo '<h5 class= "card-title">' . htmlspecialchars($row['name']) . '</h5>';
             echo '<p class="h5 text-success mb-2">£' . number_format($row['price'], 2) . '</p>';
