@@ -41,7 +41,7 @@ if (isset($_POST['add_to_basket'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport">
-    <title>Computer Equipment & Games</title>
+    <title>Home - Computer Equipment & Games</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
     rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
